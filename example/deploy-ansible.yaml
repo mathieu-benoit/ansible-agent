@@ -20,4 +20,10 @@ steps:
 - script: |
     ansible --version
     cd $(system.defaultWorkingDirectory)/example
-  displayName: 'Ansible'
+    ansible-playbook rg.yml --extra-vars "location=eastus resource_group_name=$(resourceGroupName)"
+  displayName: 'Run Ansible Playbook'
+  env:
+      AZURE_TENANT: $(tenantId)
+      AZURE_SUBSCRIPTION_ID: $(subscriptionId)
+      AZURE_CLIENT_ID: $(clientId)
+      AZURE_SECRET: $(clientSecret)
