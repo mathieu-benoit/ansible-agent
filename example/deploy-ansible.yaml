@@ -1,0 +1,23 @@
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+container: mabenoit/azuredevops-ansible-agent:latest
+
+trigger:
+  batch: true
+  branches:
+    include:
+    - refs/heads/*
+  paths:
+    include:
+    - example/
+
+variables:
+  location: eastus
+  # define 5 more variables: resourceGroupName, clientId, clientSecret, subscriptionId and tenantId in the build pipeline in UI
+
+steps:
+- script: |
+    ansible --version
+    cd $(system.defaultWorkingDirectory)/example
+  displayName: 'Ansible'
