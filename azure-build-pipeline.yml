@@ -25,7 +25,7 @@ variables:
   # define 3 more variables: registryName, registryLogin and registryPassword in the build pipeline in UI
 
 steps:
-- bash: docker build -f $(system.defaultWorkingDirectory)/Dockerfile -t $(registryName)/$(imageName):$(ansibleVersion) -t $(registryName)/$(imageName):latest $(system.defaultWorkingDirectory)
+- bash: docker build -f $(system.defaultWorkingDirectory)/Dockerfile -t $(registryName)/$(imageName):$(ansibleVersion) -t $(registryName)/$(imageName):latest  --build-arg ANSIBLE_VERSION=$(ansibleVersion) $(system.defaultWorkingDirectory)
   displayName: 'docker build'
 
 - bash: docker login -u $(registryLogin) -p $(registryPassword)
