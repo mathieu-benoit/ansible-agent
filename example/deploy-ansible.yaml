@@ -1,7 +1,7 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 
-container: mabenoit/azuredevops-ansible-agent:latest
+container: mabenoit/ansible-agent:latest
 
 trigger:
   batch: true
