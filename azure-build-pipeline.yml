@@ -20,7 +20,7 @@ pr:
     - README.md
 
 variables:
-  imageName: 'azuredevops-ansible-agent'
+  imageName: 'ansible-agent'
   ansibleVersion: 2.7.9
   # define 3 more variables: registryName, registryLogin and registryPassword in the build pipeline in UI
 
