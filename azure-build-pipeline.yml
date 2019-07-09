@@ -21,7 +21,7 @@ pr:
 
 variables:
   imageName: 'ansible-agent'
-  ansibleVersion: 2.8.1
+  ansibleVersion: 2.8.2
   # define 3 more variables: registryName, registryLogin and registryPassword in the build pipeline in UI
 
 steps:
